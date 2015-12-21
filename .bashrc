@@ -122,3 +122,8 @@ synclient TouchpadOff=1
 notify-send --urgency=low -i /usr/share/icons/HighContrast/48x48/devices/input-touchpad.png "Touchpad disabled." "Press <fn + F1> to toggle."
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Configure editor
+# ref: http://stackoverflow.com/a/2596835
+export VISUAL=vim
+esport EDITOR="$VISUAL"
