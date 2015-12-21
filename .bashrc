@@ -126,4 +126,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Configure editor
 # ref: http://stackoverflow.com/a/2596835
 export VISUAL=vim
-esport EDITOR="$VISUAL"
+export EDITOR="$VISUAL"
