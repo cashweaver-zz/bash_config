@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 
+HOME_PATH="/home/$(whoami)"
+CWD=$(pwd)
+
 echo "Installing bash_config"
 
 echo "  Creating backups"
 if [[ ! -f .bash_aliases ]]; then
-    mv .bash_aliases .bash_aliases.bak
-    echo "    .bash_aliases backed up to .bash_aliases.bak"
+    mv $HOME_PATH/.bash_aliases $HOME_PATH/.bash_aliases.bak
+    echo "    $HOME_PATH/.bash_aliases backed up to $HOME_PATH/.bash_aliases.bak"
 fi
 if [[ ! -f .bashrc ]]; then
-    mv .bashrc .bashrc.bak
-    echo "    .bashrc backed up to .bashrc.bak"
+    mv $HOME_PATH/.bashrc $HOME_PATH/.bashrc.bak
+    echo "    $HOME_PATH/.bashrc backed up to $HOME_PATH/.bashrc.bak"
 fi
 
-echo "  Linking to bash_config"
-ln -s bash_config/.bash_aliases .bash_aliases
-ln -s bash_config/.bashrc .bashrc
+echo "  Creating symlinks"
+ln -s $CWD/.bash_aliases $HOME_PATH/.bash_aliases
+ln -s $CWD/.bashrc $HOME_PATH/.bashrc
 
-echo "bash_config installed successfully!
+echo "bash_config installation complete"
