@@ -19,4 +19,7 @@ echo "  Creating symlinks"
 ln -s $CWD/.bash_aliases $HOME_PATH/.bash_aliases
 ln -s $CWD/.bashrc $HOME_PATH/.bashrc
 
+echo "  Activating .bashrc"
+source $HOME_PATH/.bashrc
+
 echo "bash_config installation complete"
