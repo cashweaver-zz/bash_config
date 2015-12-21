@@ -1,6 +1,9 @@
 # Shortcuts
 alias vba="vim ~/.bash_aliases"
 alias sba="source ~/.bash_aliases"
+alias vbr="vim ~/.bashrc"
+alias sbr="source ~/.bashrc"
+
 alias c="clear"
 alias ll="ls -la"
 
