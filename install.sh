@@ -19,7 +19,4 @@ echo "  Creating symlinks"
 ln -s $SCRIPT_DIR/.bash_aliases $HOME_PATH/.bash_aliases
 ln -s $SCRIPT_DIR/.bashrc $HOME_PATH/.bashrc
 
-echo "  Activating .bashrc"
-source $HOME_PATH/.bashrc
-
 echo "bash_config installation complete"
