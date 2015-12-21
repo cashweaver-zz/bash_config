@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 HOME_PATH="/home/$(whoami)"
-CWD=$(pwd)
+CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Installing bash_config"
 
