@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 HOME_PATH="/home/$(whoami)"
-CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Installing bash_config"
 
@@ -16,8 +16,8 @@ if [[ -f $HOME_PATH/.bashrc ]]; then
 fi
 
 echo "  Creating symlinks"
-ln -s $CWD/.bash_aliases $HOME_PATH/.bash_aliases
-ln -s $CWD/.bashrc $HOME_PATH/.bashrc
+ln -s $SCRIPT_DIR/.bash_aliases $HOME_PATH/.bash_aliases
+ln -s $SCRIPT_DIR/.bashrc $HOME_PATH/.bashrc
 
 echo "  Activating .bashrc"
 source $HOME_PATH/.bashrc
