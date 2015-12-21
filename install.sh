@@ -6,11 +6,11 @@ CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Installing bash_config"
 
 echo "  Creating backups"
-if [[ ! -f $HOME_PATH/.bash_aliases ]]; then
+if [[ -f $HOME_PATH/.bash_aliases ]]; then
     mv $HOME_PATH/.bash_aliases $HOME_PATH/.bash_aliases.bak
     echo "    $HOME_PATH/.bash_aliases backed up to $HOME_PATH/.bash_aliases.bak"
 fi
-if [[ ! -f $HOME_PATH/.bashrc ]]; then
+if [[ -f $HOME_PATH/.bashrc ]]; then
     mv $HOME_PATH/.bashrc $HOME_PATH/.bashrc.bak
     echo "    $HOME_PATH/.bashrc backed up to $HOME_PATH/.bashrc.bak"
 fi
