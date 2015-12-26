@@ -119,11 +119,23 @@ if ! shopt -oq posix; then
 fi
 
 # Enable custom keybindings
-xbindkeys
+if [[ $(type xbindkeys >/dev/null 2>&1) ]]; then
+  xbindkeys
+else
+  echo "xbindkeys not found. Skipping."
+fi
 
 # Set touchpad to OFF
-synclient TouchpadOff=1
-notify-send --urgency=low -i /usr/share/icons/HighContrast/48x48/devices/input-touchpad.png "Touchpad disabled." "Press <fn + F1> to toggle."
+if [[ $(type synclient >/dev/null 2>&1) ]]; then
+  synclient TouchpadOff=1
+else
+  echo "synclient not found. Skipping."
+fi
+if [[ $(type notify-send >/dev/null 2>&1) ]]; then
+  notify-send --urgency=low -i /usr/share/icons/HighContrast/48x48/devices/input-touchpad.png "Touchpad disabled." "Press <fn + F1> to toggle."
+else
+  echo "notify-send not found. Skipping."
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
