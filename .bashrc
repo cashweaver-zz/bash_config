@@ -119,19 +119,20 @@ if ! shopt -oq posix; then
 fi
 
 # Enable custom keybindings
-if [[ $(type xbindkeys >/dev/null 2>&1) ]]; then
+#if [[ $(type xbindkeys >/dev/null 2>&1) ]]; then
+if [[ $(type xbindkeys) ]]; then
   xbindkeys
 else
   echo "xbindkeys not found. Skipping."
 fi
 
 # Set touchpad to OFF
-if [[ $(type synclient >/dev/null 2>&1) ]]; then
+if [[ $(type synclient) ]]; then
   synclient TouchpadOff=1
 else
   echo "synclient not found. Skipping."
 fi
-if [[ $(type notify-send >/dev/null 2>&1) ]]; then
+if [[ $(type notify-send) ]]; then
   notify-send --urgency=low -i /usr/share/icons/HighContrast/48x48/devices/input-touchpad.png "Touchpad disabled." "Press <fn + F1> to toggle."
 else
   echo "notify-send not found. Skipping."
